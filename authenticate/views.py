@@ -11,7 +11,8 @@ class UserLogin(LoginView):
     template_name="authenticate/login.html"
     """def get(self, request):
         if request.user.is_authenticated:
-            return redirect('/main')"""
+            return redirect('/')
+        return redirect('/login')"""
     def post(self, request):
         username=request.POST['username']
         password=request.POST['password']
@@ -25,6 +26,7 @@ def signup(request):
     context={}
     if request.method=='POST':
         form=SignUpForm(request.POST)
+        print(form['password1'])
         """temp=User.objects.get(user=request.POST['username'])
         if temp:
             Profile.objects.create(user=request.POST)"""
