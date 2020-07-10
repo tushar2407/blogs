@@ -1,0 +1,2 @@
+Django>=2.0
+psycopg2-bianry>=2.8
