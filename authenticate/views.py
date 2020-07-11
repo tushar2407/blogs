@@ -4,9 +4,10 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from .forms import SignUpForm
+from .models import Profile
 # Create your views here.
 def home(request):
-    return render(request,'index.html')
+    return render(request,'index.html',{'users':User.objects.all(),'profiles':Profile.objects.all()})
 class UserLogin(LoginView):
     template_name="authenticate/login.html"
     """def get(self, request):
